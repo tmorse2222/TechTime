@@ -79,4 +79,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+router.get('/homepage', (req, res) => {
+    res.render('homepage');
+});
+
 module.exports = router;
