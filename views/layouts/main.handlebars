@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TechTime</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>TechTime</h1>
+                <nav>
+                    {{#if user}}
+                        <a href="/logout">Logout</a>
+                    {{else}}
+                        <a href="/login">Login/Sign Up</a>                    
+                    {{/if}}
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/homepage">Homepage</a>
+                </nav>
+            </header>
+        </div>
+        <main>
+            {{{ body }}}
+        </main>
+    </body>
+</html>
