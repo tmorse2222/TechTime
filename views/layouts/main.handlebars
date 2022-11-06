@@ -6,20 +6,24 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
-        <div>
-            <header>
-                <h1>TechTime</h1>
-                <nav>
-                    {{#if user}}
-                        <button id="logout">Logout</button>
-                    {{else}}
-                        <a href="/login">Login/Sign Up</a>                    
-                    {{/if}}
-                    <a href="/dashboard">Dashboard</a>
-                    <a href="/homepage">Homepage</a>
-                </nav>
-            </header>
+        {{#if logged_in}}
+        <div class="nav">
+            <h1>TechTime</h1>
+            <div class="nav-links">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+            </div>
         </div>
+        {{else}}
+        <div class="nav">
+            <h1>TechTime</h1>
+            <div class="nav-links">
+                <a href="/login">Login</a>
+                <a href="/homepage">homepage</a>
+                <a href="/dashboard">Dashboard</a>
+            </div>
+        </div>
+        {{/if}}
         <main>
             {{{ body }}}
         </main>
