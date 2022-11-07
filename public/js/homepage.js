@@ -6,7 +6,7 @@ const viewMessageHandler = async (event) => {
         method: 'GET',
     });
     if (response.ok) {
-        document.location.replace(`/post/${id}`);
+        document.location.replace(`api/posts/${id}`);
     } else {
         alert(response.statusText);
     }
