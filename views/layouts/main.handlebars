@@ -12,7 +12,8 @@
             <div class="nav-links">
                 <a href="/dashboard">Dashboard</a>
                 <a href="/homepage">Homepage</a>
-                <a href="/logout">Logout</a>
+                {{!-- Logout button --}}
+                    <button id="logout"type="submit">Logout</button>
             </div>
         </div>
         {{else}}
@@ -29,4 +30,5 @@
             {{{ body }}}
         </main>
     </body>
+    <script src="/js/script.js"></script>
 </html>
