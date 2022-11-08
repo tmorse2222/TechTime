@@ -21,4 +21,19 @@ const editPostHandler = async (event) => {
     }
 };
 
+// Function for deleting a post
+const deletePostHandler = async (event) => {
+    event.preventDefault();
+    const id = event.target.getAttribute('id');    
+    const response = await fetch(`/api/users/posts/${id}`, {
+        method: 'DELETE',
+    });
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert(response.statusText);
+    }
+};
+
 document.querySelector('.edit-post-form').addEventListener('submit', editPostHandler);
+document.querySelector('.delete-post-btn').addEventListener('click', deletePostHandler);
