@@ -19,4 +19,22 @@ const newFormHandler = async (event) => {
     }
 };
 
+// function for viewing user post (edit/delete)
+const viewPostHandler = async (event) => {
+    event.preventDefault();
+    const id = event.target.getAttribute('id');
+    const response = await fetch(`/api/users/posts/${id}`, {
+        method: 'GET',
+    });
+    if (response.ok) {
+        document.location.replace(`/api/users/posts/${id}`);
+    } else {
+        alert(response.statusText);
+    }
+}
+
 document.querySelector('.post-form').addEventListener('submit', newFormHandler);
+
+document.querySelectorAll('.edit-post-btn').forEach((button) => {
+    button.addEventListener('click', viewPostHandler);
+});
