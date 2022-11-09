@@ -1,28 +1,31 @@
-<div>
-    {{#if post}}
-        <h1>{{post.title}}</h1>
-        <p>{{post.body}}</p>
-        <p>{{post.user.username}}</p>
-        <p>{{post.created_at}}</p>
-        {{#if post.comments}}
-            <h2>Comments</h2>
-            {{#each post.comments}}
-                <p>{{this.comment_text}}</p>
-                <p>{{this.user.username}}</p>
-                <p>{{this.created_at}}</p>
-            {{/each}}
+<section class="container"> 
+    <div class="post-card">
+        {{#if post}}
+            <h1>{{post.title}}</h1>
+            <p>{{post.body}}</p>
+            <p>{{post.user.username}}</p>
+            <p>{{post.created_at}}</p>
+            {{#if post.comments}}
+                <h2>Comments</h2>
+                {{#each post.comments}}
+                <div class="container comment-card">
+                    <p>{{this.comment_text}}</p>
+                    <p>{{this.user.username}}</p>
+                    <p>{{this.created_at}}</p>
+                </div>
+                {{/each}}
+            {{/if}}
+        {{else}}
+            <p>Post not found</p>
         {{/if}}
-    {{else}}
-        <p>Post not found</p>
-    {{/if}}
-</div>
-{{!-- comment form with post id --}}
-<div>
-    <form action="/comments" method="POST" class="comment-form">
-        <input type="hidden" id="post-id" name="post-id" value="{{post.id}}">
-        <input type="text" name="body" id="comment">
-        <button type="submit">Add Comment</button>
-    </form>
-</div>
-
+    </div>
+    {{!-- comment form with post id --}}
+    <div class="post-card">
+        <form action="/comments" method="POST" class="comment-form">
+            <input type="hidden" id="post-id" name="post-id" value="{{post.id}}">
+            <input type="text" name="body" id="comment">
+            <button class="btn btn-primary" type="submit">Add Comment</button>
+        </form>
+    </div>
+</section>
 <script src="/js/singlePost.js"></script>

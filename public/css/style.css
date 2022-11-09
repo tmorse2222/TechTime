@@ -10,3 +10,10 @@
     padding: 10px;
     margin-bottom: 10px;
 }
+/* Style for coment-card background to be different from post-card */
+.comment-card {
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
