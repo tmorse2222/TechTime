@@ -1,23 +1,21 @@
-{{!-- Display post --}}
-<div>
-    <h2>{{post.title}}</h2>
-    <p>{{post.body}}</p>
-    <p>{{post.created_at}}</p>
-    <p>{{post.id}}</p>
-</div>
-{{!-- Edit post form with post id--}}
-<div>
-    <h2>Edit Post</h2>
-    <form class="edit-post-form" id="{{post.id}}">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title-post">
-        <label for="body">Body</label>
-        <input type="text" name="body" id="body-post">
-        <button type="submit">Submit</button>
-    </form>
-{{!-- Delete post button --}}
-    <button class="delete-post-btn" id="{{post.id}}">Delete Post</button>
-</div>
-
+<section class="container">
+    <div class="post-card">
+        <h2>{{post.title}}</h2>
+        <p>{{post.body}}</p>
+        <p>{{post.created_at}}</p>
+        <p>{{post.id}}</p>
+    </div>
+    <div class="post-card">
+        <h2>Edit Post</h2>
+        <form class="edit-post-form" id="{{post.id}}">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title-post">
+            <label for="body">Body</label>
+            <input type="text" name="body" id="body-post">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <button class="delete-post-btn btn btn-primary" id="{{post.id}}">Delete Post</button>
+    </div>
+</section>
 
 <script src="/js/editPost.js"></script>
