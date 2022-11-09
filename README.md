@@ -41,4 +41,6 @@ THEN I am signed out of the site<br>
 WHEN I am idle on the site for more than a set time<br>
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments<br>
 Description:<br>
-This application is an example full-stack development using "bcrypt" for password encryption, "connect-session-sequleize" and "express-session" for session info, "dotenv" for securing confidintial app info, "express" for server creation, "express-handlebars" for front-end development, and "mysql2" and "sequelize" for database handlers.The application represents a tech blog, allowing posts to be viewed to anyone, and allowing users to create an account, allowing the ability to post and comment.
+This application is an example full-stack development using "bcrypt" for password encryption, "connect-session-sequleize" and "express-session" for session info, "dotenv" for securing confidintial app info, "express" for server creation, "express-handlebars" for front-end development, and "mysql2" and "sequelize" for database handlers.The application represents a tech blog, allowing posts to be viewed to anyone, and allowing users to create an account, allowing the ability to post and comment.<br>
+<img src="public/sources/screenshot.png" alt="An image of the deployed application">
+A link to the deployed application can be found <a href="https://blooming-crag-56202.herokuapp.com/">here</a>.
